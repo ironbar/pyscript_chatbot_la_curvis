@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>La curvis chatbot</title>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <style>
+        body {
+          background-color: #eee;
+        }
+        .container {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          /* grid-auto-rows: minmax(400px, auto); */
+          grid-gap: 1em;
+          margin-top: 1em;
+          font-size: 2vw;
+        }
+        .container > div {
+          background-color: #fff;
+          box-shadow: 0px 5px 10px #ccc;
+          padding: 10px;
+          border-radius: 2vw;
+        }
+
+        .button {
+            border: 2px solid rgb(22, 63, 9);
+            /* padding: 4vw 1vw; */
+            /* text-align: center; */
+            text-decoration: none;
+            display: inline-block;
+            font-size: 2vw;
+            transition-duration: 0.4s;
+            width: 20%;
+            border-radius: 2vw;
+        }
+        .button:hover {
+            background-color: #c2f3c2;
+        }
+        .text_input {
+            width: 70%;
+            font-size: 2vw;
+            border: 1px solid rgb(22, 63, 9);
+        }
+        .web_title {
+            margin-top: 0.5em;
+            width: 100%;
+            font-size: 4vw;
+            text-align: center;
+            color: #04AA6D;
+        }
+        .interface{
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            margin-left: 0.5em;
+            margin-right: 0.5em;
+        }
+        .img_center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+        .conversation{
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            margin-left: 0.5em;
+            margin-right: 0.5em;
+            font-size: 2vw;
+            overflow: auto;
+            height: 40vw
+        }
+        .user_message{
+            background-color: #eee;
+            border-radius: 2vw;
+            padding: 1.5vw;
+            margin-top: 0.5em;
+            width: 70%;
+            margin-left: 0;
+            margin-right: auto;
+        }
+        .bot_message{
+            background-color: #eee;
+            border-radius: 2vw;
+            padding: 1.5vw;
+            margin-top: 0.5em;
+            width: 70%;
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+    </style>
+    <!-- <py-env>
+        - paths:
+            - data/most-common-spanish-words-v5.txt
+    </py-env> -->
+</head>
+
+<body>
+    <div class="container">
+        <div class="chat">
+            
+            <div class="conversation" id="conversation">
+                <div class="bot_message">
+                    <b>la_curvis:</b> Hola que quieres?<br>
+                </div>
+            </div><hr>
+            <div class="interface">
+                <input id="text_input" type="text" placeholder="Message" class="text_input">
+                <button class="button">Send</button>
+            </div>
+        </div>
+        <div class="bot_image">
+            <div class="web_title"><b>Habla con la curvis</b></div>
+            <img src="bot_image.png" alt="bot" class="img_center">
+        </div>
+    </div>
+    <py-script src="src/chatbot.py"></py-script>
+    <!-- <py-repl></py-repl> -->
+</body>
+
+</html>
